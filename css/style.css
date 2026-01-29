@@ -1,0 +1,732 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 90px 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #595959;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 100px 0;
+  padding-top: 100px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: 45px;
+  font-weight: bold;
+  color: #373737;
+  padding-left: 250px;
+}
+
+.navbar-brand::after {
+  content: ".";
+  color: red;
+}
+
+
+
+.navbar .nav-link {
+  position: relative;
+  color: #7f7f90;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  justify-content: space-around;
+}
+
+.nav-link {
+  font-size: 23px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar .nav-link::after {
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background-color: #ce1212;
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #000;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.home {
+
+  background-color: #eee;
+}
+
+.home .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home-text {
+  max-width: 100px;
+}
+
+.home .home-text h1 {
+  display: block;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 59px;
+  font-weight: bold;
+  font-family: "Amatic SC";
+}
+
+.home-text p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.home-img {
+  text-align: center;
+  max-width: 600px;
+}
+
+.home-img img {
+  background-color: #fff;
+  transition: 0.4s;
+  width: 100%;
+  height: auto;
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.15) inset,
+    0 5px 55px rgba(0, 0, 0, 0.322);
+
+  border-radius: 50%;
+}
+
+.home-img:hover img {
+  animation: shake 0.4s infinite;
+}
+
+.home-text,
+.home-img {
+  max-width: 40%;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-5px);
+  }
+
+  40% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-3px);
+  }
+
+  80% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .home .container {
+    flex-direction: column-reverse;
+    /* الصورة تحت النص أو العكس */
+    text-align: center;
+  }
+}
+
+/* ترتيب الأزرار بجانب بعض */
+.btns-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  /* يلتف لو الشاشة صغيرة */
+  margin-top: 20px;
+}
+
+/* Book a Table button*/
+.table-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff4b2b;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+
+/*Watch a Video button*/
+.video-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  color: #686666;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.play-icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-button:hover {
+  color: #ff4b2b;
+}
+
+.video-button:hover .play-icon {
+  background-color: white;
+  color: #ff4b2b;
+  transform: scale(1.1);
+}
+
+.chefs-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  margin: 0 auto;
+  height:100vh;
+}
+
+.chefs-section h2 {
+  color: #7f7f90;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.chefs-section h1 {
+  font-size: 36px;
+  font-family: "algeria sans";
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.highlight {
+  color: #ce1212;
+}
+
+/* Row flex layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Chef card styling */
+.chef-card {
+  padding: 0;
+  max-width: 350px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s, box-shadow 0.7s;
+  text-align: center;
+  position: relative;
+}
+
+.chef-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Chef images */
+.chef-img {
+  width: 100%;
+
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.chef-img img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.chef-card:hover .social {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+/* Chef name and title */
+.chef-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0 5px 0;
+}
+
+.chef-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Optional responsive adjustments */
+@media (max-width: 992px) {
+  .row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chef-card {
+    max-width: 100%;
+  }
+}
+
+.social {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.411);
+  padding: 10px 10px;
+  border-radius: 6px;
+  justify-content: center;
+  transform: translateX(60px);
+  /* خارج الصورة يمين */
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.social i {
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+  transition: 0.3s;
+}
+
+.social i:hover {
+  color: #fff;
+}
+
+.gallery-columns {
+  column-count: 3;
+  /* عدد الأعمدة */
+  column-gap: 20px;
+  /* المسافة بين الأعمدة */
+}
+
+.gallery {
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  color: #7f7f90;
+  padding: 60px 20px;
+  text-align: center;
+
+}
+
+.gallery h1 {
+  font-size: 36px;
+  font-family: "algeria sans";
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.gallery-item {
+  border: 5px solid white;
+  break-inside: avoid;
+  /* يمنع تقسيم العنصر بين الأعمدة */
+  margin-bottom: 20px;
+  /* مسافة بين الصور عمودياً */
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive */
+@media(max-width: 1024px) {
+  .gallery-columns {
+    column-count: 2;
+  }
+}
+
+@media(max-width: 600px) {
+  .gallery-columns {
+    column-count: 1;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col-md-4 {
+  flex: 0 0 49%;
+  /* تقريبًا نصف المساحة مع المسافة */
+  box-sizing: border-box;
+}
+
+.contact-text {
+  text-align: center;
+}
+
+.contact-text h2 {
+  color: #7f7f90;
+}
+
+.map {
+  width: 100%;
+  height: 350px;
+  display: block;
+  overflow: hidden;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.contact-box {
+  display: inline-block;
+  background: #f7f7f7;
+  padding: 20px;
+  gap: 6px;
+  height: 100%;
+  width: 100%;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  background-color: #ce1212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-right: 25px;
+  color: #eee;
+  border-radius: 100%;
+}
+
+.contact-text h4 {
+  margin: 0 0 5px;
+  font-weight: 700;
+}
+
+.contact-text p {
+  margin: 0;
+  color: #555;
+}
+.contacts-details {
+  width: 100%;
+  margin:  100px auto;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.contacts-details input,
+.contacts-details textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  outline: none;
+  font-size: 14px;
+}
+.contacts-details textarea {
+  height: 150px;
+  resize: none;
+}
+.contacts-details button {
+  background: red;
+  display: block;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  margin: 0 auto;
+  border-radius: 25px;
+ 
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row input {
+  width: 50%;
+}
+
+.footer {
+ background-image: url(../images/footer-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* الأعمدة */
+.footer > .container > .row > div {
+  flex: 1 1 30%;
+  min-width: 280px;
+}
+
+/* القسم الأول (الشعار والوصف) */
+.footer .d-flex.align-items-center {
+  margin-bottom: 15px;
+}
+
+.footer .d-flex.align-items-center img {
+  border-radius: 50%;
+}
+
+.footer h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 0 15px 10px;
+}
+
+/* الفقرة */
+.footer p {
+  color: white;
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* عنوان الفئات مثل Social Media و Subscribe */
+.footer h5 {
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+
+/* الخط تحت العناوين */
+.footer .line {
+  border: none;
+  height: 2px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* الأيقونات الاجتماعية */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+.social-icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #ce1212;
+}
+
+
+.Newsletter h5{
+  display: flex;
+  justify-content: left;
+  font-size: 24px;
+}
+/* صندوق الإدخال والزر في الاشتراك */
+.Newsletter .d-flex.gap-2 {
+  margin-bottom: 30px;
+}
+
+.Newsletter input.form-control {
+  flex: 1 1 0;
+ height: 45px;
+  padding: 10px 20px;
+  border: none;
+  border-radius:2px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.Newsletter button.btn-danger {
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  height: 45px;
+}
+
+
+
+/* روابط Quick Links */
+.Quick-Links {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.Quick-Links li {
+  color: white;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: transform 0.6s ease, color 0.6s ease;
+}
+
+.Quick-Links li i {
+  color: white;
+  font-size: 14px;
+  transition: transform 0.6s ease, color 0.6s ease;
+}
+
+.Quick-Links li:hover {
+  transform: translateX(6px);
+  background-color: rgba(63, 51, 51, 0.39);
+}
+
+.Quick-Links li:hover i {
+  background-color: rgba(92, 74, 74, 0.39);
+  transform: translateX(4px);
+}
+/* قسم Get in Touch */
+.get h5{
+  display: flex;
+  justify-content: left;
+  font-size: 24px;
+}
+.footer .col-lg-3.col-md-6.col-sm-12 p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.footer .col-lg-3.col-md-6.col-sm-12 p i {
+  color: #ce1212;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .footer .row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer > .container > .row > div {
+    min-width: 100%;
+  }
+}
